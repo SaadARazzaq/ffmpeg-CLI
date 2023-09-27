@@ -17,20 +17,20 @@ To use FFMPEG, MEet the below Requirements by following these steps:
 ```bash
 ffmpeg -i input_video.mp4 -vf "fps=10,scale=320:-1:flags=lanczos,setpts=PTS/10" -c:v gif -t 10 output.gif
 ```
-👉 -i input_video.mp4 - Input video file (replace with your video file).
+👉 `-i input_video.mp4` - Input video file (replace with your video file).
 
-👉 -vf "fps=10,scale=320:-1:flags=lanczos,setpts=PTS/10" - Video filter options:
+👉 `-vf "fps=10,scale=320:-1:flags=lanczos,setpts=PTS/10"` - Video filter options:
 
 - fps=10 - Sets the frame rate of the GIF to 10 frames per second.
 - scale=320:-1 - Resizes the video to a **width** of 320 pixels while maintaining the aspect ratio.
 - flags=lanczos - Specifies the resampling algorithm for high-quality scaling.
 - setpts=PTS/10 - Adjusts the presentation timestamps to control the video duration (in this example, fixing length it down to 10 seconds).
 
-👉 -c:v gif - Specifies the codec for the output video as GIF.
+👉 `-c:v gif` - Specifies the codec for the output video as GIF.
 
-👉 -t 10 - Sets the duration of the output GIF to 10 seconds (you can change this value).
+👉 `-t 10` - Sets the duration of the output GIF to 10 seconds (you can change this value).
 
-👉 output.gif - Output GIF file (you can choose the desired output file name).
+👉 `output.gif` - Output GIF file (you can choose the desired output file name).
 
 ---
 ## GIF To Video
@@ -38,19 +38,19 @@ ffmpeg -i input_video.mp4 -vf "fps=10,scale=320:-1:flags=lanczos,setpts=PTS/10" 
 ```bash
 ffmpeg -i input.gif -vf "fps=30,scale=1280:-1:flags=lanczos" -c:v libx264 -crf 20 -pix_fmt yuv420p output_video.mp4
 ```
-👉 -i input.gif - Input GIF file (replace with your GIF file).
+👉 `-i input.gif` - Input GIF file (replace with your GIF file).
 
-👉 -vf "fps=30,scale=1280:-1:flags=lanczos" - Video filter options:
+👉 `-vf "fps=30,scale=1280:-1:flags=lanczos"` - Video filter options:
 
 - fps=30 - Sets the frame rate of the output video to 30 frames per second. You can adjust this value to control the video's frame rate.
 - scale=1280:-1 - Resizes the video to a **width** of 1280 pixels while maintaining the aspect ratio. Modify the width as needed.
 - flags=lanczos - Specifies the resampling algorithm for high-quality scaling.
 
-👉 -c:v libx264 - Specifies the video codec as libx264, a popular video codec.
+👉 `-c:v libx264` - Specifies the video codec as libx264, a popular video codec.
 
-👉 -crf 20 - Constant Rate Factor (CRF) for video quality. Lower values (e.g., 18) result in higher quality but larger file sizes. Higher values (e.g., 30) reduce quality but yield smaller files. 20 is a good compromise for decent quality and reasonable file size.
+👉 `-crf 20` - Constant Rate Factor (CRF) for video quality. Lower values (e.g., 18) result in higher quality but larger file sizes. Higher values (e.g., 30) reduce quality but yield smaller files. 20 is a good compromise for decent quality and reasonable file size.
 
-👉 -pix_fmt yuv420p - Sets the pixel format to yuv420p, which is widely supported by video players.
+👉 `-pix_fmt yuv420p` - Sets the pixel format to yuv420p, which is widely supported by video players.
 
-👉 output_video.mp4 - Output video file (you can choose the desired output file name).
+👉 `output_video.mp4` - Output video file (you can choose the desired output file name).
 
