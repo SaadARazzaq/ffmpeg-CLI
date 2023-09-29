@@ -32,6 +32,11 @@ ffmpeg -i input_video.mp4 -vf "fps=10,scale=320:-1:flags=lanczos,setpts=PTS/10" 
 
 👉 `output.gif` - Output GIF file (you can choose the desired output file name).
 
+**If you want to create a GIF of the entire video without fast-forwarding or cropping, you can use the following FFmpeg command:**
+```bash
+ffmpeg -i input.mp4 -vf "fps=24,scale=1600:-1:flags=lanczos" -c:v gif output.gif
+```
+
 ---
 ## GIF To Video
 ---
